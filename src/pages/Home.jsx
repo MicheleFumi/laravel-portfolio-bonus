@@ -6,7 +6,8 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState();
 
-  const navigate=useNavigate()
+  const navigate = useNavigate()
+  
   useEffect(() => {
     axios
       .get(import.meta.env.VITE_API_URL)
@@ -17,7 +18,7 @@ function Home() {
       })
       .catch((err) => {
         setError(err.message);
-        
+      
       });
   }, []);
   const goToDetail=(id) => {
